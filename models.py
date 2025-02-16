@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.stats import norm
 
+# ----- Option Pricing Models -----
 def black_scholes(S, K, T, r, sigma, option_type="call"):
     """Calculate European option price using the Black-Scholes model."""
     d1 = (np.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
@@ -50,6 +51,9 @@ def binomial_tree(S, K, T, r, sigma, option_type="call", num_steps=100):
         for j in range(i + 1):  # Loop through each node at this step
             stock_price_at_t = S * (u ** (i - j)) * (d ** j)  # Stock price at time t
             # Calculate the option value at this node (taking risk-neutral expectation)
-            option_values[j, i] = discount * (p * option_values[j, i + 1] + (1 - p) * option_values[j + 1, i + 1])
+            if option_type == "call":
+                option_values[j, i] = discount * (p * option_values[j, i + 1] + (1 - p) * option_values[j + 1, i + 1])
+            else:
+                option_values[j, i] = discount * (p * option_values[j, i + 1] + (1 - p) * option_values[j + 1, i + 1])
     
     return option_values[0, 0]  # Return the option value at time 0 (root of the tree)
