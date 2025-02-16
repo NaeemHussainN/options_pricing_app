@@ -50,12 +50,27 @@ streamlit run app.py
 - **Volatility (σ):** Expected price fluctuation of the asset.
 - **Ticker Symbol (optional):** Fetch real-time stock prices.
 
-## Streamlit Web App Demonstrations
+# Streamlit Web App Demonstrations
 Below are demonstrations of each pricing model in action:
 
-- **Black-Scholes Model:** ![Black-Scholes](https://github.com/NaeemHussainN/options_pricing_platform/blob/main/black_scholes.gif)
-- **Monte Carlo Simulation:** ![Monte Carlo](https://your-image-url.com/monte_carlo.gif)
-- **Binomial Tree Model:** ![Binomial Tree](https://your-image-url.com/binomial_tree.gif)
+
+## Black-Scholes Model
+
+![Black-Scholes](https://github.com/NaeemHussainN/options_pricing_platform/blob/main/black_scholes.gif)
+
+The Black-Scholes model is used to price European options. It assumes a lognormal distribution of stock prices and provides a closed-form solution for option pricing.
+
+## Monte Carlo Simulation
+
+![Monte Carlo](https://your-image-url.com/monte_carlo.gif)
+
+Monte Carlo simulation estimates option prices by simulating multiple possible paths for the underlying asset and averaging the discounted payoffs.
+
+## Binomial Tree Model
+
+![Binomial Tree](https://your-image-url.com/binomial_tree.gif)
+
+The Binomial model prices options by constructing a recombining price tree over multiple periods and working backwards to determine option value.
 
 ## Dependencies
 - **Streamlit** (for UI)
