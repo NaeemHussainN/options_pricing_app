@@ -16,31 +16,6 @@ The application provides an intuitive **UI with interactive heatmaps** to visual
 - **Heatmaps** to visualize pricing behavior under different conditions.
 - **GIF Demonstrations** of each pricing model in action.
 
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/NaeemHussainN/options-pricing-platform.git
-    cd options-pricing-platform
-    ```
-
-2. Create a virtual environment (optional but recommended):
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-
-3. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-## Usage
-Run the application with the following command:
-
-```bash
-streamlit run app.py
-```
 
 ## Parameters
 - **Asset Price (S):** Current price of the underlying asset.
@@ -167,10 +142,32 @@ The Binomial Tree model is widely used in quantitative finance due to its abilit
 - **NumPy** (for calculations)
 - **Plotly** (for visualization)
 
-Install them using:
+## Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/NaeemHussainN/options-pricing-platform.git
+    cd options-pricing-platform
+    ```
+
+2. Create a virtual environment (optional but recommended):
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+3. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+Run the application with the following command:
+
 ```bash
-pip install -r requirements.txt
+streamlit run app.py
 ```
+
 
 ## File Structure
 ```
