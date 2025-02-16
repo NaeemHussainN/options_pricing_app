@@ -86,7 +86,7 @@ Here, \( Z \) is a random variable drawn from a standard normal distribution (\(
 
 Monte Carlo methods are widely used in quantitative finance due to their flexibility in pricing complex derivatives and handling scenarios where closed-form solutions do not exist.
 
-![Monte Carlo](https://your-image-url.com/monte_carlo.gif)
+![Monte Carlo](https://github.com/NaeemHussainN/options_pricing_platform/blob/main/monte_carlo_model.gif)
 
 
 ## Binomial Tree Model for Option Pricing  
