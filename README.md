@@ -14,7 +14,6 @@ The application provides an intuitive **UI with interactive heatmaps** to visual
 - Select between **Black-Scholes, Monte Carlo, or Binomial Tree models**.
 - Enter **custom parameters** for asset price, strike price, volatility, interest rate, and maturity.
 - **Heatmaps** to visualize pricing behavior under different conditions.
-- **GIF Demonstrations** of each pricing model in action.
 
 
 ## Parameters
