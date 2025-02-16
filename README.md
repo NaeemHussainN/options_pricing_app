@@ -53,7 +53,7 @@ streamlit run app.py
 ## Streamlit Web App Demonstrations
 Below are demonstrations of each pricing model in action:
 
-- **Black-Scholes Model:** ![Black-Scholes](https://your-image-url.com/black_scholes.gif)
+- **Black-Scholes Model:** ![Black-Scholes](https://github.com/NaeemHussainN/options_pricing_platform/blob/main/black_scholes.gif)
 - **Monte Carlo Simulation:** ![Monte Carlo](https://your-image-url.com/monte_carlo.gif)
 - **Binomial Tree Model:** ![Binomial Tree](https://your-image-url.com/binomial_tree.gif)
 
