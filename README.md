@@ -69,8 +69,8 @@ Monte Carlo Simulation is a numerical technique used to estimate the theoretical
 
 Using the Monte Carlo method, the theoretical value of a European call option (C) and a European put option (P) can be estimated as follows:  
 
-**Simulating Future Price Paths:**  
-The underlying asset price follows a Geometric Brownian Motion, modeled as:  
+### Simulating Future Price Paths:  
+The underlying asset price follows a **discretized Geometric Brownian Motion** with daily steps:
 
 **Call Option:**  
 $$Call = e^{-r \cdot T} \cdot \frac{1}{N} \sum_{i=1}^{N} \max(S_T^i - K, 0)$$  
@@ -80,7 +80,7 @@ $$Put = e^{-r \cdot T} \cdot \frac{1}{N} \sum_{i=1}^{N} \max(K - S_T^i, 0)$$
 
 Where:  
 
-$$S_T = S \cdot e^{(r - \frac{1}{2} \sigma^2) \cdot T + \sigma \cdot \sqrt{T} \cdot Z}$$  
+$$S_T = S \cdot e^{\left( r - \frac{1}{2} \sigma^2 \right) \cdot T + \sigma \cdot \sqrt{T} \cdot Z}$$
 
 Here, \( Z \) is a random variable drawn from a standard normal distribution (\( Z \sim N(0,1) \)).
 
