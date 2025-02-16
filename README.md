@@ -132,7 +132,7 @@ Where:
 
 The Binomial Tree model is widely used in quantitative finance due to its ability to price both European and American options, incorporate early exercise features, and handle various dividend structures.  
 
-![Binomial Tree](https://your-image-url.com/binomial_tree.gif)
+![Binomial Tree](https://github.com/NaeemHussainN/options_pricing_platform/blob/main/binomial_tree_model.gif)
 
 
 
