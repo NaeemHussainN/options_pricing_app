@@ -53,7 +53,8 @@ $$d1 = \frac{\ln\left(\frac{S}{K}\right) + \left(r + \frac{\sigma^2}{2}\right) \
 $$d2 = d1 - \sigma \cdot \sqrt{T}$$
 
 
-![Black-Scholes](https://github.com/NaeemHussainN/options_pricing_platform/blob/main/black_scholes.gif)
+![Black-Scholes](https://github.com/NaeemHussainN/options_pricing_platform/blob/main/black_scholes_model.gif)
+
 
 
 ## Monte Carlo Simulation for Option Pricing  
