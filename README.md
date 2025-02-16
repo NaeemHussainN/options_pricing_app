@@ -54,17 +54,66 @@ streamlit run app.py
 Below are demonstrations of each pricing model in action:
 
 
-## Black-Scholes Model
+
+## Black-Scholes Pricing Model (1973)
+The Black-Scholes Pricing Model, developed by Fischer Black, Myron Scholes, and Robert Merton in 1973, revolutionized the way options are priced in the financial markets. It provided a groundbreaking formula to calculate the theoretical value of European-style options. The model takes into account several factors:
+
+1. **Underlying Asset Price (S)**: The current market price of the underlying asset.
+2. **Strike Price (K)**: The predetermined price at which the option holder can buy or sell the underlying asset.
+3. **Time to Expiration (T)**: The remaining time until the option's expiration.
+4. **Risk-free Interest Rate (r)**: The continuously compounded risk-free interest rate over the option's time to expiration.
+5. **Volatility (σ)**: The standard deviation of the underlying asset's returns, indicating the level of its price fluctuations.
+Using the Black-Scholes formula, the theoretical value of a European call option (C) and a European put option (P) can be calculated as follows:
+
+
+**Call Option:**
+$$Call = S \cdot N(d1) - K \cdot e^{-r \cdot T} \cdot N(d2)$$
+
+**Put Option:**
+$$Put = K \cdot e^{-r \cdot T} \cdot N(-d2) - S \cdot N(-d1)$$
+
+Where:
+
+$$d1 = \frac{\ln\left(\frac{S}{K}\right) + \left(r + \frac{\sigma^2}{2}\right) \cdot T}{\sigma \cdot \sqrt{T}}$$
+
+$$d2 = d1 - \sigma \cdot \sqrt{T}$$
+
 
 ![Black-Scholes](https://github.com/NaeemHussainN/options_pricing_platform/blob/main/black_scholes.gif)
 
-The Black-Scholes model is used to price European options. It assumes a lognormal distribution of stock prices and provides a closed-form solution for option pricing.
 
-## Monte Carlo Simulation
+## Monte Carlo Simulation for Option Pricing  
+Monte Carlo Simulation is a numerical technique used to estimate the theoretical value of financial derivatives, including options. Unlike the Black-Scholes model, which provides a closed-form solution, Monte Carlo methods rely on repeated random sampling to simulate potential future price paths of the underlying asset. This approach is particularly useful for pricing complex options where analytical solutions are not feasible. The model considers several factors:  
+
+1. **Underlying Asset Price (S)**: The current market price of the underlying asset.  
+2. **Strike Price (K)**: The predetermined price at which the option holder can buy or sell the underlying asset.  
+3. **Time to Expiration (T)**: The remaining time until the option's expiration.  
+4. **Risk-free Interest Rate (r)**: The continuously compounded risk-free interest rate over the option's time to expiration.  
+5. **Volatility (σ)**: The standard deviation of the underlying asset's returns, indicating the level of its price fluctuations.  
+6. **Number of Simulations (N)**: The number of random price paths generated to approximate the option price.  
+
+Using the Monte Carlo method, the theoretical value of a European call option (C) and a European put option (P) can be estimated as follows:  
+
+**Simulating Future Price Paths:**  
+The underlying asset price follows a Geometric Brownian Motion, modeled as:  
+
+**Call Option:**  
+$$Call = e^{-r \cdot T} \cdot \frac{1}{N} \sum_{i=1}^{N} \max(S_T^i - K, 0)$$  
+
+**Put Option:**  
+$$Put = e^{-r \cdot T} \cdot \frac{1}{N} \sum_{i=1}^{N} \max(K - S_T^i, 0)$$  
+
+Where:  
+
+$$S_T = S \cdot e^{(r - \frac{1}{2} \sigma^2) \cdot T + \sigma \cdot \sqrt{T} \cdot Z}$$  
+
+Here, \( Z \) is a random variable drawn from a standard normal distribution (\( Z \sim N(0,1) \)).
+
+Monte Carlo methods are widely used in quantitative finance due to their flexibility in pricing complex derivatives and handling scenarios where closed-form solutions do not exist.
 
 ![Monte Carlo](https://your-image-url.com/monte_carlo.gif)
 
-Monte Carlo simulation estimates option prices by simulating multiple possible paths for the underlying asset and averaging the discounted payoffs.
+
 
 ## Binomial Tree Model
 
@@ -95,6 +144,5 @@ options-pricing-platform/
 ## Contributing
 Pull requests are welcome! If you'd like to add features or improve existing code, feel free to fork the repository and submit a PR.
 
-## License
-This project is licensed under the **MIT License**.
+
 
