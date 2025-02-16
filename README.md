@@ -114,12 +114,52 @@ Monte Carlo methods are widely used in quantitative finance due to their flexibi
 ![Monte Carlo](https://your-image-url.com/monte_carlo.gif)
 
 
+## Binomial Tree Model for Option Pricing  
+The Binomial Tree Model is a numerical method used to estimate the theoretical value of options by discretizing the price movement of the underlying asset over multiple time steps. Unlike the Black-Scholes model, which assumes continuous price movement, the Binomial Tree model constructs a step-by-step evolution of the asset price, making it particularly useful for pricing American-style options that can be exercised before expiration. The model considers several factors:  
 
-## Binomial Tree Model
+1. **Underlying Asset Price (S)**: The current market price of the underlying asset.  
+2. **Strike Price (K)**: The predetermined price at which the option holder can buy or sell the underlying asset.  
+3. **Time to Expiration (T)**: The remaining time until the option's expiration, divided into \( N \) discrete time steps.  
+4. **Risk-free Interest Rate (r)**: The continuously compounded risk-free interest rate over the option's time to expiration.  
+5. **Volatility (σ)**: The standard deviation of the underlying asset's returns, indicating the level of its price fluctuations.  
+6. **Number of Steps (N)**: The number of discrete time steps used to model the price evolution.  
+
+Using the Binomial Tree method, the theoretical value of a European call option (C) and a European put option (P) can be estimated as follows:  
+
+### **Upward and Downward Price Movements:**  
+The asset price moves up or down at each time step based on a binomial process:  
+
+$$ u = e^{\sigma \cdot \sqrt{\Delta t}} $$  
+
+$$ d = e^{-\sigma \cdot \sqrt{\Delta t}} $$  
+
+Where \( \Delta t = \frac{T}{N} \) is the length of each time step.  
+
+### **Risk-Neutral Probability:**  
+The probability of an upward movement in a risk-neutral world is given by:  
+
+$$ p = \frac{e^{r \cdot \Delta t} - d}{u - d} $$  
+
+### **Call Option:**  
+$$ Call = e^{-r \cdot T} \sum_{i=0}^{N} \binom{N}{i} p^i (1 - p)^{N-i} \max(S \cdot u^i \cdot d^{N-i} - K, 0) $$  
+
+### **Put Option:**  
+$$ Put = e^{-r \cdot T} \sum_{i=0}^{N} \binom{N}{i} p^i (1 - p)^{N-i} \max(K - S \cdot u^i \cdot d^{N-i}, 0) $$  
+
+Where:  
+
+- \( u \) and \( d \) are the up and down factors for price movement.  
+- \( p \) is the risk-neutral probability.  
+
+
+
+
+
+The Binomial Tree model is widely used in quantitative finance due to its ability to price both European and American options, incorporate early exercise features, and handle various dividend structures.  
 
 ![Binomial Tree](https://your-image-url.com/binomial_tree.gif)
 
-The Binomial model prices options by constructing a recombining price tree over multiple periods and working backwards to determine option value.
+
 
 ## Dependencies
 - **Streamlit** (for UI)
