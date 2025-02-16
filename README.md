@@ -80,7 +80,7 @@ The Binomial model prices options by constructing a recombining price tree over 
 
 Install them using:
 ```bash
-pip install streamlit yfinance numpy plotly
+pip install -r requirements.txt
 ```
 
 ## File Structure
